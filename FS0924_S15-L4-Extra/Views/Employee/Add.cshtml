@@ -1,0 +1,57 @@
+﻿@model AddEmployee;
+
+@{
+    ViewData["Title"] = "add employee";
+}
+
+<div class="w-25 mx-auto">
+    <h2>Add employee</h2>
+
+    <form asp-controller="Employee" asp-action="AddEmployee">
+        <div>
+            <label class="form-label" for="employeeName" asp-for="Name"></label>
+            <input id="employeeName" class="form-control" asp-for="Name" />
+        </div>
+
+        <div>
+            <label class="form-label" for="employeeSurname" asp-for="Surname"></label>
+            <input id="employeeSurname" class="form-control" asp-for="Surname" />
+        </div>
+
+        <div>
+            <label class="form-label" for="employeeFiscalCode" asp-for="FiscalCode"></label>
+            <input id="employeeFiscalCode" class="form-control" asp-for="FiscalCode" />
+        </div>
+
+        <div>
+            <label class="form-label" for="employeeAge" asp-for="Age"></label>
+            <input id="employeeAge" type="number" class="form-control" asp-for="Age" />
+        </div>
+
+        <div>
+            <label class="form-label" for="employeeIncome" asp-for="Income"></label>
+            <input id="employeeIncome" type="number" step="0.01" class="form-control" asp-for="Income" />
+        </div>
+
+        <div class="d-flex gap-1">
+            <input type="checkbox" id="employeeTaxDeduction" class="form-check" asp-for="TaxDeduction" />
+            <label class="form-label" for="employeeTaxDeduction" asp-for="TaxDeduction"></label>
+        </div>
+
+        <div>
+            <label class="form-label" for="employeeEmployment" asp-for="Employment"></label>
+            <input id="employeeEmployment" class="form-control" asp-for="Employment" />
+        </div>
+
+        <div>
+            <label class="form-label" for="employeeHiringDate" asp-for="HiringDate"></label>
+            <input id="employeeHiringDate" class="form-control" asp-for="HiringDate" />
+        </div>
+
+        <div class="d-flex justify-content-end gap-2 mt-3">
+            <button class="btn btn-success">Add</button>
+            <button type="reset" class="btn btn-secondary">Clean</button>
+        </div>
+
+    </form>
+</div>

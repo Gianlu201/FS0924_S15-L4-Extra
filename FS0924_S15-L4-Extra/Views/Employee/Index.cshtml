@@ -1,0 +1,42 @@
+﻿@model EmployeesViewModel;
+
+@{
+    ViewData["Title"] = "Employees Management";
+}
+
+<div>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>CF</th>
+                <th>Age</th>
+                <th>Income</th>
+                <th>Tax Deduction</th>
+                <th>Employment</th>
+                <th>Hiring date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var employee in Model.Employees)
+            {
+                <tr>
+                    <td>@employee.Name</td>
+                    <td>@employee.Surname</td>
+                    <td>@employee.FiscalCode</td>
+                    <td>@employee.Age</td>
+                    <td>@employee.Income</td>
+                    <td>@employee.TaxDeduction</td>
+                    <td>@employee.EmploymentTitle</td>
+                    <td>@employee.HiringDate</td>
+                    <td>
+                        <a class="btn btn-sm btn-warning" asp-controller="Employee" asp-action="Edit" asp-route-id=@employee.IdEmployee>Edit</a>
+                        <a class="btn btn-sm btn-danger" asp-controller="Employee" asp-action="Delete" asp-route-id=@employee.IdEmployee>Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
